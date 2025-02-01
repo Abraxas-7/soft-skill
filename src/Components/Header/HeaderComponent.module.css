@@ -6,7 +6,7 @@
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   /* position: fixed; */
   width: 100%;
-  z-index: 3;
+  /* z-index: 3; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -21,9 +21,9 @@
   background-color: #f9efdb;
 }
 
-.header li {
+/* .header li {
   display: inline-block;
-}
+} */
 
 /* Link dentro il menu, usando NavLink */
 .header li a,

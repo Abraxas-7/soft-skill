@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const partecipanti = [
   {
@@ -184,50 +184,28 @@ const partecipanti = [
   },
 ];
 
-function DetailsPartecipantePage() {
-  const { id } = useParams();
-
-  const partecipante = partecipanti.find((p) => p.id === parseInt(id));
-
+function ListaPartecipanti() {
   return (
-    <div className="container mt-5">
-      <h2 className="text-center">Dettagli Partecipante</h2>
-      {partecipante ? (
-        <div className="card my-5 mx-auto" style={{ maxWidth: "900px" }}>
-          <div className="row g-0 p-3">
-            <div className="col-md-4 d-flex justify-content-center align-items-center mb-3 mb-md-0">
-              <img
-                src={partecipante.immagineProfilo}
-                className="img-fluid rounded-circle"
-                alt="Immagine Profilo"
-                style={{
-                  objectFit: "cover",
-                  width: "180px",
-                  height: "180px",
-                }}
-              />
+    <div>
+      <h2 className="mb-3">Lista partecipanti</h2>
+      {partecipanti.map((p) => (
+        <div key={p.id} className="card p-2 mb-2 shadow-sm">
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 className="mb-0">{`${p.nome} ${p.cognome}`}</h5>
             </div>
-            <div className="col-md-8 col-12">
-              <div className="card-body">
-                <h4 className="card-title pb-2">{`${partecipante.nome} ${partecipante.cognome}`}</h4>
-                <p className="card-text">
-                  <strong>Codice Fiscale:</strong> {partecipante.codiceFiscale}
-                </p>
-                <p className="card-text">
-                  <strong>Email:</strong> {partecipante.email}
-                </p>
-                <p className="card-text">
-                  <strong>Telefono:</strong> {partecipante.telefono}
-                </p>
-              </div>
-            </div>
+            <Link
+              to={`/DetailsParticipantePage/${p.id}`}
+              className="btn btn-primary"
+              state={{ partecipante: p }}
+            >
+              Info partecipante
+            </Link>
           </div>
         </div>
-      ) : (
-        <p>Partecipante non trovato.</p>
-      )}
+      ))}
     </div>
   );
 }
 
-export default DetailsPartecipantePage;
+export default ListaPartecipanti;
