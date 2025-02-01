@@ -5,7 +5,7 @@ const trips = [
         destination: "Parigi",
         startDate: "2025-02-01",
         endDate: "2025-02-10",
-        imageUrl: "", 
+        imageUrl: "",
         participants: [
             {
                 firstName: "Marco",
