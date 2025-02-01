@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../Footer/FooterComponent.module.css";
 function FooterComponent() {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${styles.FontHeaderFooter}`}>
       <div className={`${styles.footerLeft} ${styles.colMd4} ${styles.colSm6}`}>
         <div className={styles.icons}>
           <a href="#">
