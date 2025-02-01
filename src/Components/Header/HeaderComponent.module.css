@@ -2,7 +2,7 @@
 
 /* Stili generali per l'header */
 .header {
-  background-color: #fff;
+  background-color: #c4dfdf;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   /* position: fixed; */
   width: 100%;
@@ -15,7 +15,7 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #c4dfdf;
 }
 
 .header li {
@@ -37,6 +37,7 @@
 .header li .myLink:hover,
 .menuBtn:hover {
   background-color: #f4f4f4;
+  border-radius: 30px;
 }
 
 /* Link attivo (stato corrente) per NavLink */
@@ -132,7 +133,8 @@
   }
   .header li a,
   .header li .myLink {
-    padding: 20px 30px;
+    padding: 5px 30px;
+    margin-top: 15px;
   }
   .menu {
     clear: none;

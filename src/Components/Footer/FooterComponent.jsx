@@ -38,7 +38,10 @@ function FooterComponent() {
         <div>
           <i className="fa fa-envelope"></i>
           <p>
-            <a href="#"> officio@agenzia.com</a>
+            <a className={styles.color} href="#">
+              {" "}
+              officio@agenzia.com
+            </a>
           </p>
         </div>
       </div>
