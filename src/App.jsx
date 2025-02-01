@@ -14,10 +14,10 @@ function App() {
         <Route path="/" Component={DefaultLayout}>
           <Route index Component={HomePage} />
           <Route
-            path="/DetailsParticipantePage"
+            path="DetailsParticipantePage/:id"
             Component={DetailsParticipantePage}
           />
-          <Route path="/DetailsViaggiPage" Component={DetailsViaggiPage} />
+          <Route path="DetailsViaggiPage" Component={DetailsViaggiPage} />
           <Route path="/contact" Component={Contact} />
           <Route path="/about" Component={About} />
         </Route>
