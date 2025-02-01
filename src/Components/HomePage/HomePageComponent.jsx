@@ -1,11 +1,13 @@
 import React from "react";
+import style from "./HomePageComponent.module.css";
+import { FaUser } from 'react-icons/fa';
 
 const trips = [
     {
         destination: "Parigi",
         startDate: "2025-02-01",
         endDate: "2025-02-10",
-        imageUrl: "",
+        imageUrl: "/parigi.jpg",
         participants: [
             {
                 firstName: "Marco",
@@ -22,12 +24,17 @@ const trips = [
                 fiscalCode: "BNCHNA75P45D325V",
             },
         ],
+        accompanier: {
+            firstName: "Giovanni",
+            lastName: "Gialli",
+            email: "giovanni.gialli@email.com",
+        },
     },
     {
         destination: "Roma",
         startDate: "2025-03-01",
         endDate: "2025-03-07",
-        imageUrl: "",
+        imageUrl: "/roma.jpg",
         participants: [
             {
                 firstName: "Luca",
@@ -37,12 +44,17 @@ const trips = [
                 fiscalCode: "VRDLCA90A01H123Z",
             },
         ],
+        accompanier: {
+            firstName: "Francesca",
+            lastName: "Blu",
+            email: "francesca.blu@email.com",
+        },
     },
     {
         destination: "Londra",
         startDate: "2025-04-15",
         endDate: "2025-04-20",
-        imageUrl: "",
+        imageUrl: "/londra.jpg",
         participants: [
             {
                 firstName: "Giulia",
@@ -52,26 +64,42 @@ const trips = [
                 fiscalCode: "NRIGLA75T47A112W",
             },
         ],
+        accompanier: {
+            firstName: "Alessandro",
+            lastName: "Gialli",
+            email: "alessandro.gialli@email.com",
+        },
     },
 ];
+
 
 function Trip() {
     return (
         <section className="container">
-            <h2>Viaggi in corso</h2>
+            <h2 className="text-center p-3">Viaggi in corso</h2>
             <div className="row">
                 {trips.map((trip, index) => (
                     <div className="col-md-4" key={index}>
-                        <div className="card" style={{ width: "18rem" }}>
-                            <img src={trip.imageUrl} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">{trip.destination}</h5>
+                        <div className="card" style={{ width: "24rem", borderRadius: "10px" }}>
+                            <img src={trip.imageUrl} className={style.img} alt="..." />
+                            <div className="card-body">                                
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <h5 className="card-title">{trip.destination}</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaUser className="mr-2 m-1" />
+                                        <p className="card-text mb-0">
+                                            <strong>{trip.accompanier.firstName} {trip.accompanier.lastName}</strong>
+                                        </p>
+                                    </div>
+                                </div>
+
                                 <p className="card-text">
                                     <strong>Data di inizio:</strong> {trip.startDate}
                                 </p>
                                 <p className="card-text">
                                     <strong>Data di fine:</strong> {trip.endDate}
                                 </p>
+
                                 <a href="#" className="btn btn-primary">
                                     Dettagli Passeggeri
                                 </a>
@@ -83,5 +111,6 @@ function Trip() {
         </section>
     );
 }
+
 
 export default Trip;
