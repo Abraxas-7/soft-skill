@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./HeaderComponent.module.css";
 import { NavLink } from "react-router-dom";
+import SearchBarComponent from "../Search-bar/SearchBarComponent";
 
 function HeaderComponent() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,24 +25,27 @@ function HeaderComponent() {
   return (
     <div className={styles.jumbotron}>
       <header className={`${styles.header} ${styles.FontHeaderFooter}`}>
-        <ul className={`${styles.menu} ${menuOpen ? styles.open : ""}`}>
-          <li>
-            <NavLink to="/about" className={styles.myLink}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/Contact" className={styles.myLink}>
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-        <label htmlFor="menu-btn" className={styles.menuIcon}>
-          <span className={styles.navicon}></span>
-        </label>
-        <a href="/" className={styles.logo}>
-          Logo
-        </a>
+        <div className={styles.headerContainer}>
+          <a href="/" className={styles.logo}>
+            Logo
+          </a>
+          {/* <SearchBarComponent /> */}
+          <ul className={`${styles.menu} ${menuOpen ? styles.open : ""}`}>
+            <li>
+              <NavLink to="/about" className={styles.myLink}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/Contact" className={styles.myLink}>
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+          <label htmlFor="menu-btn" className={styles.menuIcon}>
+            <span className={styles.navicon}></span>
+          </label>
+        </div>
         <input
           type="checkbox"
           id="menu-btn"
