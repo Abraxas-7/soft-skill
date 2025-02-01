@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import styles from "./HeaderComponent.module.css";
+import { NavLink } from "react-router-dom";
 
 function HeaderComponent() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${styles.FontHeaderFooter}`}>
       <ul className={`${styles.menu} ${menuOpen ? styles.open : ""}`}>
         <li>
-          <a href="#about">About</a>
+          <NavLink to="/about" className={styles.myLink}>
+            About
+          </NavLink>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <NavLink to="/Contact" className={styles.myLink}>
+            Contact
+          </NavLink>
         </li>
       </ul>
       <label htmlFor="menu-btn" className={styles.menuIcon}>

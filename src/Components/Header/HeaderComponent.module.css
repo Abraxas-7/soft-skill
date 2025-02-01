@@ -1,20 +1,30 @@
+/* HeaderComponent.module.css */
+
+/* Stili generali per l'header */
 .header {
-  background-color: #fff;
+  background-color: #c4dfdf;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   width: 100%;
   z-index: 3;
 }
 
+/* Menu */
 .header ul {
   margin: 0;
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #c4dfdf;
 }
 
-.header li a {
+.header li {
+  display: inline-block;
+}
+
+/* Link dentro il menu, usando NavLink */
+.header li a,
+.header li .myLink {
   display: block;
   padding: 20px 20px;
   border-right: 1px solid #f4f4f4;
@@ -22,20 +32,30 @@
   color: #000;
 }
 
+/* Hover su link */
 .header li a:hover,
+.header li .myLink:hover,
 .menuBtn:hover {
   background-color: #f4f4f4;
+  border-radius: 30px;
 }
 
+/* Link attivo (stato corrente) per NavLink */
+.myLink.active {
+  color: #ff6600; /* Cambia colore per l'elemento attivo */
+  font-weight: bold;
+}
+
+/* Logo */
 .logo {
   display: block;
-  /* float: left; */
   font-size: 2em;
   padding: 10px 20px;
   text-decoration: none;
   color: #000;
 }
 
+/* Menu mobile */
 .menu {
   clear: both;
   max-height: 0;
@@ -46,6 +66,7 @@
   max-height: 240px;
 }
 
+/* Icona hamburger per il menu */
 .menuIcon {
   cursor: pointer;
   display: inline-block;
@@ -83,6 +104,7 @@
   top: -5px;
 }
 
+/* Gestione del menu mobile */
 .menuBtn {
   display: none;
 }
@@ -104,12 +126,15 @@
   top: 0;
 }
 
+/* Layout desktop */
 @media (min-width: 48em) {
   .header li {
     float: left;
   }
-  .header li a {
-    padding: 20px 30px;
+  .header li a,
+  .header li .myLink {
+    padding: 5px 30px;
+    margin-top: 15px;
   }
   .menu {
     clear: none;
@@ -119,4 +144,12 @@
   .menuIcon {
     display: none;
   }
+}
+
+/* Font */
+.FontHeaderFooter {
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 401;
+  font-style: normal;
 }

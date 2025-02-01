@@ -5,6 +5,8 @@ import DefaultLayout from "./Layout/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import DetailsParticipantePage from "./pages/DetailsParticipantePage";
 import DetailsViaggiPage from "./pages/DetailsViaggiPage";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,8 @@ function App() {
             Component={DetailsParticipantePage}
           />
           <Route path="DetailsViaggiPage" Component={DetailsViaggiPage} />
+          <Route path="/contact" Component={Contact} />
+          <Route path="/about" Component={About} />
         </Route>
       </Routes>
     </BrowserRouter>
