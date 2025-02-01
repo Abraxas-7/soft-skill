@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./HomePageComponent.module.css";
 import { FaUser } from 'react-icons/fa';
+import { NavLink } from "react-router-dom";
 
 const trips = [
     {
@@ -82,7 +83,7 @@ function Trip() {
                     <div className="col-md-4" key={index}>
                         <div className="card" style={{ width: "24rem", borderRadius: "10px" }}>
                             <img src={trip.imageUrl} className={style.img} alt="..." />
-                            <div className="card-body">                                
+                            <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title">{trip.destination}</h5>
                                     <div className="d-flex align-items-center">
@@ -99,10 +100,9 @@ function Trip() {
                                 <p className="card-text">
                                     <strong>Data di fine:</strong> {trip.endDate}
                                 </p>
-
-                                <a href="#" className="btn btn-primary">
+                                <NavLink to="/ListaPartecipanti" className="btn btn-primary">
                                     Dettagli Passeggeri
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
