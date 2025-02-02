@@ -7,7 +7,10 @@ export default function DefaultLayout() {
   return (
     <div>
       <HeaderComponent />
-      <Outlet />
+      <main className="Main">
+        <Outlet />
+      </main>
+
       <FooterComponent />
     </div>
   );

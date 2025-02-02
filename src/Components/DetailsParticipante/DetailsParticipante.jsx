@@ -190,11 +190,11 @@ function DetailsPartecipantePage() {
   const partecipante = partecipanti.find((p) => p.id === parseInt(id));
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{ backgroundColor: "#F9EFDB" }}>
       <h2 className="text-center">Dettagli Partecipante</h2>
       {partecipante ? (
         <div className="card my-5 mx-auto" style={{ maxWidth: "900px" }}>
-          <div className="row g-0 p-3">
+          <div className="row g-0 p-3" style={{ backgroundColor: "#F9EFDB" }}>
             <div className="col-md-4 d-flex justify-content-center align-items-center mb-3 mb-md-0">
               <img
                 src={partecipante.immagineProfilo}

@@ -1,0 +1,14 @@
+.participantInfo {
+  margin: 0 auto;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Pos {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-top: 60px;
+  justify-content: center;
+}

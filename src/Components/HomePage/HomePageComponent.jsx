@@ -141,7 +141,7 @@ function Trip() {
                 alt={`Viaggio a ${trip.destination}`}
                 style={{ height: "200px", objectFit: "cover" }}
               />
-              <div className="card-body">
+              <div className={`card-body ${style.cardbody}`}>
                 <div className="d-flex justify-content-between align-items-center">
                   <h5 className="card-title">{trip.destination}</h5>
                   {trip.accompanier ? (
@@ -164,7 +164,10 @@ function Trip() {
                 <p className="card-text">
                   <strong>Data di fine:</strong> {trip.endDate}
                 </p>
-                <NavLink to="/DetailsViaggiPage" className="btn btn-primary">
+                <NavLink
+                  to="/DetailsViaggiPage"
+                  className="btn btn-light border"
+                >
                   Dettaglo clienti
                 </NavLink>
               </div>
@@ -187,7 +190,7 @@ function Trip() {
                 alt={`Viaggio a ${trip.destination}`}
                 style={{ height: "200px", objectFit: "cover" }}
               />
-              <div className="card-body">
+              <div className={`card-body ${style.cardbody}`}>
                 <div className="d-flex justify-content-between align-items-center">
                   <h5 className="card-title">{trip.destination}</h5>
                   <div className="d-flex align-items-center">
@@ -203,7 +206,10 @@ function Trip() {
                   <strong>Data di fine:</strong> {trip.endDate}
                 </p>
 
-                <NavLink to="/DetailsViaggiPage" className="btn btn-primary">
+                <NavLink
+                  to="/DetailsViaggiPage"
+                  className="btn btn-light border"
+                >
                   Dettagli Passeggeri
                 </NavLink>
               </div>

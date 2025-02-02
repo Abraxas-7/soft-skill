@@ -3,6 +3,10 @@ import DetailsParticipante from "../Components/DetailsParticipante/DetailsPartic
 import React from "react";
 
 function DetailsParticipantePage() {
-  return <DetailsParticipante />;
+  return (
+    <div className="detailsViaggi">
+      <DetailsParticipante />
+    </div>
+  );
 }
 export default DetailsParticipantePage;

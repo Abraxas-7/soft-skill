@@ -187,16 +187,19 @@ const partecipanti = [
 function ListaPartecipanti() {
   return (
     <div>
-      <h2 className="mb-3">Lista partecipanti</h2>
+      <h2 className="mb-3">Rubrica</h2>
       {partecipanti.map((p) => (
-        <div key={p.id} className="card p-2 mb-2 shadow-sm">
-          <div className="d-flex justify-content-between align-items-center">
+        <div key={p.id} className="card  mb-2 shadow-sm">
+          <div
+            className="d-flex justify-content-between align-items-center p-2"
+            style={{ backgroundColor: "#F9EFDB" }}
+          >
             <div>
               <h5 className="mb-0">{`${p.nome} ${p.cognome}`}</h5>
             </div>
             <Link
               to={`/DetailsParticipantePage/${p.id}`}
-              className="btn btn-primary"
+              className="btn btn-light"
               state={{ partecipante: p }}
             >
               Info partecipante
