@@ -31,8 +31,8 @@ function HeaderComponent() {
 
           <ul className={`${styles.menu} ${menuOpen ? styles.open : ""}`}>
             <li>
-              <NavLink to="/about" className={styles.myLink}>
-                About
+              <NavLink to="/CreateViaggio" className={styles.myLink}>
+                Creare un viaggio
               </NavLink>
             </li>
             <li>

@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import DetailsParticipantePage from "./pages/DetailsParticipantePage";
 import DetailsViaggi from "./pages/DetailsViaggiPage";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
+import CreateViaggio from "./pages/CreateViaggio";
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +19,7 @@ function App() {
           />
           <Route path="DetailsViaggiPage" Component={DetailsViaggi} />
           <Route path="/contact" Component={Contact} />
-          <Route path="/about" Component={About} />
+          <Route path="/CreateViaggio" Component={CreateViaggio} />
         </Route>
       </Routes>
     </BrowserRouter>
