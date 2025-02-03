@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function CreateViaggio({ addTrip }) {
-  // Stato per raccogliere i dati del form
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     destinazione: "",
     accompagnatore: "",
     startDate: "",
     endDate: "",
-    imageUrl: "", // Aggiungiamo il campo immagine
+    imageUrl: "",
   });
 
-  // Funzione per gestire il cambiamento nei campi del form
   function handleInputChange(e) {
     const { id, value } = e.target;
     setFormData({
@@ -19,25 +19,26 @@ function CreateViaggio({ addTrip }) {
     });
   }
 
-  // Funzione per gestire il submit del form
   function handleSubmit(e) {
     e.preventDefault();
     const tripWithAccompagnatore = {
       ...formData,
-      accompagnatore: formData.accompagnatore || null, // Se non c'è accompagnatore, mettiamo null
+      accompagnatore: formData.accompagnatore || null,
     };
-    addTrip(tripWithAccompagnatore); // Aggiungi il nuovo viaggio
+    addTrip(tripWithAccompagnatore);
     setFormData({
       destinazione: "",
       accompagnatore: "",
       startDate: "",
       endDate: "",
-      imageUrl: "", // Reset anche il campo immagine
-    }); // Reset form
+      imageUrl: "",
+    });
+
+    navigate(-1);
   }
 
   return (
-    <form className="row gy-2 gx-3 align-items-center" onSubmit={handleSubmit}>
+    <form className="row gy-2 gx-3 align-items-center m-5" onSubmit={handleSubmit}>
       <div className="col-auto">
         <label htmlFor="destinazione">Destinazione</label>
         <input
@@ -81,7 +82,6 @@ function CreateViaggio({ addTrip }) {
         />
       </div>
 
-      {/* Campo immagine */}
       <div className="col-auto">
         <label htmlFor="imageUrl">URL immagine</label>
         <input
